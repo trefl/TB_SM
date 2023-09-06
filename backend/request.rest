@@ -1,0 +1,99 @@
+//Create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "John",
+    "email": "john@example.com",
+    "password": "12345678",
+    "confPassword": "12345678",
+    "role": "user"
+}
+
+###
+//get All Users
+GET http://localhost:5000/users
+
+###
+//Get Single User
+GET http://localhost:5000/users/a8eaa7d1-9bb3-42ef-ae2c-c31e08dfd7c3
+
+
+### 
+//Update a user
+PATCH  http://localhost:5000/users/a8eaa7d1-9bb3-42ef-ae2c-c31e08dfd7c3
+Content-Type: application/json
+
+{
+    "name": "Jan Updated",
+    "email": "admin@example.com",
+    "password": "",
+    "confPassword": "",
+    "role": "user"
+}
+
+### 
+//Delete a user
+DELETE   http://localhost:5000/users/a8eaa7d1-9bb3-42ef-ae2c-c31e08dfd7c3
+
+###
+//Login Admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "12345678"
+}
+
+###
+//Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "john@example.com",
+    "password": "12345678"
+}
+
+###
+GET http://localhost:5000/me
+
+
+###
+//LOGOUT
+DELETE http://localhost:5000/logout
+
+
+
+###
+//get All Workers
+GET http://localhost:5000/workers
+
+###
+//Get Single Worker
+GET http://localhost:5000/workers/4fae5188-1e91-44e8-9e25-4f4e74c48914
+
+###
+//POST Data Worker
+POST http://localhost:5000/workers
+Content-Type: application/json
+
+{
+    "name": "Janina",
+    "surname": "Bocian"
+}
+
+###
+//PATCH Data Worker
+PATCH http://localhost:5000/workers/4fae5188-1e91-44e8-9e25-4f4e74c48914
+Content-Type: application/json
+
+{
+    "name": "Janina",
+    "surname": "Wróbel"
+}
+
+###
+//DELETE Data Worker
+DELETE  http://localhost:5000/workers/4fae5188-1e91-44e8-9e25-4f4e74c48914
